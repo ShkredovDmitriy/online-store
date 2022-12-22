@@ -1,0 +1,39 @@
+.product-card {
+  position: relative;
+  width: auto;
+  height: 12.5rem;
+  padding: 0.625rem;
+  border: 1px solid black;
+  border-radius: 0.3125rem;
+
+  &__category {
+    margin-bottom: 0.625rem;
+    font-size: 0.75rem;
+    line-height: 1;
+    color: grey;
+  }
+
+  &__title {
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  &__brand {
+    font-size: 0.875rem;
+    line-height: 1;
+    color: gray;
+  }
+
+  &__button-info {
+    position: absolute;
+    bottom: 0.625rem;
+    right: 0.625rem;
+    padding: 0.5rem;
+    background-color: grey;
+    font-size: 0.875rem;
+    line-height: 1;
+    color: white;
+    text-decoration: none;
+  }
+}
