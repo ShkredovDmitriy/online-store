@@ -1,14 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.scss";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
+import { Header, Footer } from "components";
+import { PageCatalog, PageProduct, Page404 } from "pages";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <div>test</div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<PageCatalog />} />
+        <Route path="/product/:id" element={<PageProduct />} />
+        <Route path="/*" element={<Page404 />} />
+      </Routes>
+      <Footer />
+    </Router>
   </React.StrictMode>
 );
 
