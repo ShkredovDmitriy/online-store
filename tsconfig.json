@@ -21,7 +21,8 @@
       "data/*": ["./data/*"],
       "pages/*": ["./pages/*"],
       "components/*": ["./components/*"],
-      "assets/*": ["./assets/*"]
+      "assets/*": ["./assets/*"],
+      "store/*": ["./store/*"]
     }
   },
   "include": ["src"]
