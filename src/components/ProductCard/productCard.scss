@@ -1,5 +1,7 @@
 .product-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   width: auto;
   height: 12.5rem;
   padding: 0.625rem;
@@ -23,6 +25,16 @@
     font-size: 0.875rem;
     line-height: 1;
     color: gray;
+  }
+
+  &__price {
+    margin-top: auto;
+    font-size: 1rem;
+    line-height: 1;
+
+    &:before {
+      content: "$";
+    }
   }
 
   &__button-info {
