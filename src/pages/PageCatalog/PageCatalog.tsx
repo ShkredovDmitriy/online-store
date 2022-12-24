@@ -3,9 +3,11 @@ import "./pageCatalog.scss";
 import { TProductItem } from "types";
 import { productsList } from "data";
 import { ProductFilter, ProductCard } from "components";
-import { useSelector, RootState } from "store";
+import { action, useDispatch, useSelector, RootState } from "store";
 
 export const PageCatalog = () => {
+  const dispatch = useDispatch();
+
   const filterCategory = useSelector(
     (state: RootState) => state.filterCategory
   ) as string[];
@@ -14,8 +16,9 @@ export const PageCatalog = () => {
     (state: RootState) => state.filterBrand
   ) as string[];
 
-  console.log("FILTER CATEGORY", filterCategory);
-  console.log("FILTER BRAND", filterBrand);
+  const productsSort = useSelector(
+    (state: RootState) => state.productsSort
+  ) as string;
 
   let filteredList: TProductItem[] = [...productsList];
 
@@ -29,15 +32,55 @@ export const PageCatalog = () => {
       filterBrand.includes(productItem.brand)
     );
 
+  if (productsSort === "price-ASC")
+    filteredList.sort(
+      (productItemA: TProductItem, productItemB: TProductItem) =>
+        productItemA.price - productItemB.price
+    );
+  if (productsSort === "price-DESC")
+    filteredList.sort(
+      (productItemA: TProductItem, productItemB: TProductItem) =>
+        productItemB.price - productItemA.price
+    );
+  if (productsSort === "rating-ASC")
+    filteredList.sort(
+      (productItemA: TProductItem, productItemB: TProductItem) =>
+        productItemA.rating - productItemB.rating
+    );
+  if (productsSort === "rating-DESC")
+    filteredList.sort(
+      (productItemA: TProductItem, productItemB: TProductItem) =>
+        productItemB.rating - productItemA.rating
+    );
+  if (productsSort === "discount-ASC")
+    filteredList.sort(
+      (productItemA: TProductItem, productItemB: TProductItem) =>
+        productItemA.discountPercentage - productItemB.discountPercentage
+    );
+  if (productsSort === "discount-DESC")
+    filteredList.sort(
+      (productItemA: TProductItem, productItemB: TProductItem) =>
+        productItemB.discountPercentage - productItemA.discountPercentage
+    );
+
+  // TODO: move catalog__panel to extend component
+
   return (
     <main className="page-main">
       <ProductFilter />
       <section className="catalog">
         <div className="catalog__panel">
           <span>
-            <select name="sort">
-              <option value="sort-title" disabled>
-                Sort options:
+            <select
+              name="sort"
+              onChange={(event: any) => {
+                const select = event.target as HTMLSelectElement;
+                console.log(select.value);
+                dispatch(action.setProductsSort(select.value));
+              }}
+            >
+              <option value="default" selected>
+                Default
               </option>
               <option value="price-ASC">Sort by price ASC</option>
               <option value="price-DESC">Sort by price DESC</option>

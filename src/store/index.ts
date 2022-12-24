@@ -12,15 +12,22 @@ const filterBrand = createReducer([], (builder) => {
   builder.addCase(setFilterBrand, (state, action) => action.payload);
 });
 
+const setProductsSort = createAction<string>("setProductsSort");
+const productsSort = createReducer("", (builder) => {
+  builder.addCase(setProductsSort, (state, action) => action.payload);
+});
+
 export const action = {
   setFilterCategory,
   setFilterBrand,
+  setProductsSort,
 };
 
 export const store = configureStore({
   reducer: {
     filterCategory,
     filterBrand,
+    productsSort,
   },
   devTools: true,
 });
