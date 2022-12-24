@@ -6,8 +6,35 @@
 
 .catalog {
   flex-grow: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  row-gap: 0.625rem;
-  column-gap: 0.625rem;
+
+  &__panel {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.625rem;
+    width: 100%;
+    height: 1.875rem;
+    border: 1px solid black;
+    border-radius: 0.3125rem;
+
+    span {
+      display: flex;
+      width: 33.3%;
+      padding: 0 0.625rem;
+
+      &:nth-child(2) {
+        justify-content: center;
+      }
+
+      &:nth-child(3) {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &__prod-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 0.625rem;
+    column-gap: 0.625rem;
+  }
 }
