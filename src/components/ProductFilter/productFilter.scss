@@ -1,4 +1,5 @@
 .filter {
+  flex-shrink: 0;
   margin-right: 0.625rem;
   width: 18.75rem;
   padding: 0.5rem;
@@ -8,6 +9,7 @@
   &__container {
     display: flex;
     flex-direction: column;
+    margin-top: 1rem;
   }
 
   &__title {
@@ -15,7 +17,23 @@
     color: white;
   }
 
+  &__scroll {
+    height: 12.5rem;
+    overflow-y: auto;
+  }
+
   &__item {
+    display: flex;
+    align-items: center;
     margin: 0;
+    opacity: 0.5;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  &__count {
+    margin-left: auto;
   }
 }
