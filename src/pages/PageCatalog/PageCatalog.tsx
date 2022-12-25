@@ -7,7 +7,7 @@ import { action, useDispatch, useSelector, RootState } from "store";
 import { useSearchParams } from "react-router-dom";
 
 export const PageCatalog = () => {
-  let [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const dispatch = useDispatch();
 
   const filterCategory = useSelector(
@@ -127,7 +127,7 @@ export const PageCatalog = () => {
           <span>
             <select
               name="sort"
-              onChange={(event: any) => {
+              onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
                 const select = event.target as HTMLSelectElement;
                 console.log(select.value);
                 dispatch(action.setProductsSort(select.value));
@@ -178,11 +178,10 @@ export const PageCatalog = () => {
               className="catalog__search-field"
               type="text"
               value={productsSearch || ""}
-              onChange={(event: any) => {
-                const message = event.target.value;
-                console.log(event.target.value);
-                dispatch(action.setProductsSearch(message));
-                paramsHandler({ search: message });
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                const input = event.target as HTMLInputElement;
+                dispatch(action.setProductsSearch(input.value));
+                paramsHandler({ search: input.value });
               }}
             />
 
@@ -191,8 +190,7 @@ export const PageCatalog = () => {
               name="view"
               value="big"
               checked={productsView === "big"}
-              onChange={(event: any) => {
-                console.log("big");
+              onChange={() => {
                 dispatch(action.setProductsView("big"));
                 paramsHandler({ view: "big" });
               }}
@@ -202,8 +200,7 @@ export const PageCatalog = () => {
               name="view"
               value="small"
               checked={productsView === "small"}
-              onChange={(event: any) => {
-                console.log("small");
+              onChange={() => {
                 dispatch(action.setProductsView("small"));
                 paramsHandler({ view: "small" });
               }}

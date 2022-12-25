@@ -106,7 +106,7 @@ export const ProductFilter = () => {
                       const checkbox = event.target as HTMLInputElement;
                       if (checkbox.value) {
                         if (checkbox.checked) {
-                          const newFilter = [...filterCategory];
+                          const newFilter: string[] = [...filterCategory];
                           newFilter.push(checkbox.value);
                           dispatch(action.setFilterCategory(newFilter));
                         } else {
@@ -146,7 +146,7 @@ export const ProductFilter = () => {
                     const checkbox = event.target as HTMLInputElement;
                     if (checkbox.value) {
                       if (checkbox.checked) {
-                        const newFilter = [...filterBrand];
+                        const newFilter: string[] = [...filterBrand];
                         newFilter.push(checkbox.value);
                         dispatch(action.setFilterBrand(newFilter));
                       } else {

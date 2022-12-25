@@ -1,16 +1,22 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { ActionReducerMapBuilder, configureStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
 import { createAction, createReducer } from "@reduxjs/toolkit";
 
-const setFilterCategory = createAction<any>("setFilterCategory");
-const filterCategory = createReducer([], (builder) => {
-  builder.addCase(setFilterCategory, (state, action) => action.payload);
-});
+const setFilterCategory = createAction<string[]>("setFilterCategory");
+const filterCategory = createReducer(
+  [],
+  (builder: ActionReducerMapBuilder<string[]>) => {
+    builder.addCase(setFilterCategory, (state, action) => action.payload);
+  }
+);
 
-const setFilterBrand = createAction<any>("setFilterBrand");
-const filterBrand = createReducer([], (builder) => {
-  builder.addCase(setFilterBrand, (state, action) => action.payload);
-});
+const setFilterBrand = createAction<string[]>("setFilterBrand");
+const filterBrand = createReducer(
+  [],
+  (builder: ActionReducerMapBuilder<string[]>) => {
+    builder.addCase(setFilterBrand, (state, action) => action.payload);
+  }
+);
 
 const setProductsSort = createAction<string>("setProductsSort");
 const productsSort = createReducer("default", (builder) => {
