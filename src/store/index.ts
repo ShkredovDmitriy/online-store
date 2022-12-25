@@ -13,14 +13,26 @@ const filterBrand = createReducer([], (builder) => {
 });
 
 const setProductsSort = createAction<string>("setProductsSort");
-const productsSort = createReducer("", (builder) => {
+const productsSort = createReducer("default", (builder) => {
   builder.addCase(setProductsSort, (state, action) => action.payload);
+});
+
+const setProductsView = createAction<string>("setProductsView");
+const productsView = createReducer("big", (builder) => {
+  builder.addCase(setProductsView, (state, action) => action.payload);
+});
+
+const setProductsSearch = createAction<string>("setProductsSearch");
+const productsSearch = createReducer("", (builder) => {
+  builder.addCase(setProductsSearch, (state, action) => action.payload);
 });
 
 export const action = {
   setFilterCategory,
   setFilterBrand,
   setProductsSort,
+  setProductsView,
+  setProductsSearch,
 };
 
 export const store = configureStore({
@@ -28,6 +40,8 @@ export const store = configureStore({
     filterCategory,
     filterBrand,
     productsSort,
+    productsView,
+    productsSearch,
   },
   devTools: true,
 });
