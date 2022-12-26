@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./button.scss";
+import "../Style/main.scss";
 
 export interface ButtonProps{
     children: string;
