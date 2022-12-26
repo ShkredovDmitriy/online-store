@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./pageProduct.scss";
+import "../../components/Style/main.scss";
+//import "./pageProduct.scss";
 import { useParams } from "react-router-dom";
 import { TProductItem } from "types";
 import { productsList } from "data";
@@ -39,14 +40,16 @@ export const PageProduct = () => {
             <h1>{product.title}</h1>
             <Rating rating={product.rating} />
           </div>
-          <div className="product__info-brand">{product.brand}</div>
+          <div className="product__info-brand">Brand: {product.brand}</div>
           <div className="product__info-price">
             <h2>{Math.round(product.price * (100 - product.discountPercentage) / 100)}</h2>
             <h3>{product.price}</h3>
           </div>
           <div className="product__info-stock">Stock: {product.stock}</div>
-          <Button type="primary-btn" color="green" onClick={() => console.log('1')} >Add to card</Button>
-          <Button type="primary-btn" color="black" onClick={() => console.log('1')} >Buy now</Button>
+          <div>
+            <Button type="primary-btn" color="green" onClick={() => console.log('1')} >Add to card</Button>
+            <Button type="primary-btn" color="black" onClick={() => console.log('1')} >Buy now</Button>
+          </div>
         </div>
       </div>
 

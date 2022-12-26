@@ -1,0 +1,104 @@
+.page-product {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: start  ;
+  align-content: space-between;
+  border: 1px solid black;
+  border-radius: .3125rem;
+  @extend .text;
+}
+
+.product{
+  &__path {
+    margin: 40px auto;
+  }
+  &__card{
+    margin: 19.2px;
+    display: grid;
+    justify-items: start;
+    grid-template-columns:  5rem 0.7fr 1fr;
+    gap: 4%;
+  }
+  &__description{
+    display: grid;
+    row-gap: 30px;
+    &-img{
+      width: auto;
+      max-width: 100%;
+      min-width: 13rem;
+      min-height: 13rem;
+    }
+    &-btn{
+      text-align: left;
+      padding: 10px 0 10px 10px;
+    }
+  }
+  &__info{
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    width: 100%;
+    &-price{ 
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      
+      > *:before {
+        content: "$";
+      }
+      >:last-child{
+        margin-left: 2rem;
+        text-decoration: line-through;
+        opacity: 0.7;
+      }
+    }
+    &-title{
+      display: grid;
+      >:first-child{
+        @extend .title;
+      }
+      @media (min-width: 66.25rem) {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        justify-content: space-between;
+        >:last-child{
+          justify-self: end;
+        }
+      }
+      @media (max-width: 66.25rem) {
+        grid-template-row: repeat(2, 1fr);
+        align-content: space-between;
+        gap: 10%;
+        >:last-child{
+          justify-content: end;
+          font-size: calc(1.25rem + 1vw);
+        }
+      }
+      @media (max-width: 36.875rem) {
+        >:first-child{
+          @extend .title;
+          font-size: calc(1.25rem + 1vw);
+        }
+        >:last-child{
+          justify-content: end;
+          font-size: calc(1.25rem + 1vw);
+        }
+      }
+    }
+    &-stock{
+      display: flex;
+      align-items: center;
+      &:before {
+        content: "";
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+        border-radius: 50%;
+        background: $highlight-color;
+        filter: blur(2.4px);
+      }
+    }
+  }
+}
