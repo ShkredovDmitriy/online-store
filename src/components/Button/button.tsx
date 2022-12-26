@@ -5,12 +5,13 @@ export interface ButtonProps{
     children: string;
     onClick: () => void;
     type: string;
-    color: string
+    backColor: string;
+    textColor?: string;
 }
 
-export const Button = ({ children, onClick, type, color }: ButtonProps) => {
+export const Button = ({ children, onClick, type, backColor, textColor }: ButtonProps) => {
       
     return (
-        <button className={type} style={{background: "{color}"}} onClick={onClick}>{children}</button>
+        <button className={type} style={{background: backColor, color: textColor}} onClick={onClick}>{children}</button>
      )
 };
