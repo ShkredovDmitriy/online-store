@@ -3,7 +3,7 @@ import "./pageProduct.scss";
 import { useParams } from "react-router-dom";
 import { TProductItem } from "types";
 import { productsList } from "data";
-import { ImageSlider } from './ImageSlider/imageSlider'
+import { ImageSlider } from '../../components/ImageSlider/imageSlider'
 import { Rating } from '../../components/Rating/rating'
 import { Button } from '../../components/Button/button'
 
