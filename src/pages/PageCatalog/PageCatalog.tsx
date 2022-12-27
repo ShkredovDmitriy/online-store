@@ -127,6 +127,7 @@ export const PageCatalog = () => {
           <span>
             <select
               name="sort"
+              value={productsSort}
               onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
                 const select = event.target as HTMLSelectElement;
                 console.log(select.value);
@@ -134,42 +135,13 @@ export const PageCatalog = () => {
                 paramsHandler({ sort: select.value });
               }}
             >
-              <option value="default" selected={productsSort === ""}>
-                Default
-              </option>
-              <option value="price-ASC" selected={productsSort === "price-ASC"}>
-                Sort by price ASC
-              </option>
-              <option
-                value="price-DESC"
-                selected={productsSort === "price-DESC"}
-              >
-                Sort by price DESC
-              </option>
-              <option
-                value="rating-ASC"
-                selected={productsSort === "rating-ASC"}
-              >
-                Sort by rating ASC
-              </option>
-              <option
-                value="rating-DESC"
-                selected={productsSort === "rating-DESC"}
-              >
-                Sort by rating DESC
-              </option>
-              <option
-                value="discount-ASC"
-                selected={productsSort === "discount-ASC"}
-              >
-                Sort by discount ASC
-              </option>
-              <option
-                value="discount-DESC"
-                selected={productsSort === "discount-DESC"}
-              >
-                Sort by discount DESC
-              </option>
+              <option value="">Default</option>
+              <option value="price-ASC">Sort by price ASC</option>
+              <option value="price-DESC">Sort by price DESC</option>
+              <option value="rating-ASC">Sort by rating ASC</option>
+              <option value="rating-DESC">Sort by rating DESC</option>
+              <option value="discount-ASC">Sort by discount ASC</option>
+              <option value="discount-DESC">Sort by discount DESC</option>
             </select>
           </span>
           <span>Found: {filteredList.length}</span>
