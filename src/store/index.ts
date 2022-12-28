@@ -18,6 +18,22 @@ const filterBrand = createReducer(
   }
 );
 
+const setFilterPrice = createAction<number[]>("setFilterPrice");
+const filterPrice = createReducer(
+  [0, 1000000],
+  (builder: ActionReducerMapBuilder<number[]>) => {
+    builder.addCase(setFilterPrice, (state, action) => action.payload);
+  }
+);
+
+const setFilterStock = createAction<number[]>("setFilterStock");
+const filterStock = createReducer(
+  [0, 1000000],
+  (builder: ActionReducerMapBuilder<number[]>) => {
+    builder.addCase(setFilterStock, (state, action) => action.payload);
+  }
+);
+
 const setProductsSort = createAction<string>("setProductsSort");
 const productsSort = createReducer("default", (builder) => {
   builder.addCase(setProductsSort, (state, action) => action.payload);
@@ -36,6 +52,8 @@ const productsSearch = createReducer("", (builder) => {
 export const action = {
   setFilterCategory,
   setFilterBrand,
+  setFilterPrice,
+  setFilterStock,
   setProductsSort,
   setProductsView,
   setProductsSearch,
@@ -45,6 +63,8 @@ export const store = configureStore({
   reducer: {
     filterCategory,
     filterBrand,
+    filterPrice,
+    filterStock,
     productsSort,
     productsView,
     productsSearch,
