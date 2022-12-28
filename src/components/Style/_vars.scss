@@ -1,2 +1,15 @@
 $text-color: #000000;
 $highlight-color: #B4E907;
+
+.upline {
+    position: relative;
+      &::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 0px;
+        left: 0;
+        top: -15px;
+        border: 0.5px solid rgba($text-color, 0.4);
+    }
+}
