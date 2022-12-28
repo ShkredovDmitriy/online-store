@@ -52,7 +52,7 @@ export const PageProduct = () => {
             <h3>{product.price}</h3>
           </div>
           <div className="product__info-stock">Stock: {product.stock}</div>
-          <div style={{margin: "0 auto"}}>
+          <div className="product__info-btn">
             <Button type="primary-btn" backColor="#B4E907" onClick={() => console.log('1')} >Add to card</Button>
             <Button type="primary-btn" backColor="#000000" textColor="#ffffff" onClick={() => console.log('1')} >Buy now</Button>
           </div>
