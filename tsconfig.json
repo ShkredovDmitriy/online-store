@@ -23,7 +23,8 @@
       "pages/*": ["./pages/*"],
       "components/*": ["./components/*"],
       "assets/*": ["./assets/*"],
-      "store/*": ["./store/*"]
+      "store/*": ["./store/*"],
+      "helpers/*": ["./helpers/*"]
     }
   },
   "include": ["src"]
