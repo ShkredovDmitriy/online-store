@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./rating.scss";
+import "../Style/main.scss";
 
 export interface RatingProps{
     rating: number
