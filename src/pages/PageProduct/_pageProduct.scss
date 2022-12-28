@@ -13,14 +13,14 @@
 .product{
   &__path {
     margin: 2.5rem auto;
-    padding: 10px 0;
+    padding: 10px 1% 10px 0;
     width: 100%;
     display: grid;
     justify-content: space-between;
     grid-template-columns: repeat(4, 1fr);
     @extend .title;
-    font-size: calc(10px + 0.5vw);
-    line-height: 2vw;
+    font-size: calc(10px + 0.4vw);
+    line-height: 1.7vw;
     text-transform: uppercase;
     background: $text-color;
     color: $highlight-color;
