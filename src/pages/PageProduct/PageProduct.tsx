@@ -20,16 +20,23 @@ export const PageProduct = () => {
 
 
   return <main className="page-product">
-     <div className="product__path">Тут будет путь</div>
+     <div className="product__path">
+      <a href="/" target="_blank">store</a>
+      <a>{product.category}</a>
+      <a>{product.brand}</a>
+      <a>{product.title}</a>
+     </div>
      <div className="product__card">
         <ImageSlider images={product.images} onImageChange={(url => setMainImageUrl(url))}/>
         <div className="product__description">
-          <img className="product__description-img" src={mainImageUrl}></img>
+          <div className="product__description-img">
+            <img src={mainImageUrl}></img>
+          </div>
           <div className="product__description-category">Category: {product.category}</div>
-          <button className="product__description-btn" 
+          <button className={`product__description-btn ${details  && 'product__description-btn_selected'}`}
             onClick={() => setDetails(prev => !prev)}
           >
-             Description: </button>
+             <b>Description:</b> </button>
           {details && <>
             <p className="product__description-text">{product.description}</p>
           </>}
@@ -45,7 +52,7 @@ export const PageProduct = () => {
             <h3>{product.price}</h3>
           </div>
           <div className="product__info-stock">Stock: {product.stock}</div>
-          <div>
+          <div style={{margin: "0 auto"}}>
             <Button type="primary-btn" backColor="#B4E907" onClick={() => console.log('1')} >Add to card</Button>
             <Button type="primary-btn" backColor="#000000" textColor="#ffffff" onClick={() => console.log('1')} >Buy now</Button>
           </div>
