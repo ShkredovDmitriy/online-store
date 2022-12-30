@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./productCatalog.scss";
+import "../Style/main.scss";
 import { TProductItem } from "types";
 import { productsList } from "data";
 import { ProductCard } from "components";

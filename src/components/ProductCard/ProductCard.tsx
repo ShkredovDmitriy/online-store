@@ -1,7 +1,7 @@
 import React from "react";
 import { TProductItem } from "types/index";
 import { Link } from "react-router-dom";
-import "./productCard.scss";
+import "../Style/main.scss";
 
 export const ProductCard = ({ product }: { product: TProductItem }) => {
   const {
