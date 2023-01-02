@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./productFilter.scss";
+import "../Style/main.scss";
 import { TProductItem } from "types";
 import { productsList } from "data";
 import { action, useSelector, RootState } from "store";
