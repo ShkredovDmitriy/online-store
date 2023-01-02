@@ -33,7 +33,7 @@
 
   &__prod-list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     row-gap: 0.625rem;
     column-gap: 0.625rem;
 
