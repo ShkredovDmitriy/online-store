@@ -34,9 +34,14 @@
   &__prod-list {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    row-gap: 0.625rem;
-    column-gap: 0.625rem;
-
+    gap: .625rem;
+    justify-items: center;
+    @media (max-width: 850px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (max-width: 550px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
     &.small {
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }

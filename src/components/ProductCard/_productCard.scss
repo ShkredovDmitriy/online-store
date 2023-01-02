@@ -1,78 +1,78 @@
 .product-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  width: auto;
-  width: 12.5rem;
-  height: 18.75rem;
-  border: 1px solid black;
-  background: $light-color;
-  border-radius: 0.3125rem;
-
-  &__title {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 2.5rem;
-    padding: 0.25rem;
-    background-color: rgba(0, 0, 0, 0.7);
-    font-size: 1rem;
-    line-height: 1;
-    font-weight: normal;
-    color: #ffffff;
-    text-align: center;
-  }
-
-  &__info {
-    position: absolute;
-    top: 2.5rem;
-    left: 0;
-    padding: 0.25rem;
-    background-color: rgba(0, 0, 0, 0.7);
-    font-size: 0.75rem;
-    line-height: 1.3;
-    font-weight: normal;
-    color: #ffffff;
-  }
+  display: grid;
+  grid-template-areas: "img img img img img" "img img img img img" "title title title . rating" "price price price price price" "add add . info info";
+  width: 13.75rem;
+  height: 20.625rem;
+  background: #FFFFFF;
+  box-shadow: 0rem .125rem 1.25rem .3125rem rgba($text-color, 0.4);
+  border-radius: 1.25rem;
+  padding: .625rem;
 
   &__preview {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    grid-area: img;
+    justify-self: center;
+    height: 10rem;
+    object-fit: contain;
     object-position: center;
     border-radius: 0.3125rem;
   }
 
-  &__price {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    margin-top: auto;
-    padding: 0.75rem;
-    background-color: rgba(0, 0, 0, 0.7);
+  &__title {
+    grid-area: title;
+    width: 100%;
+    height: 2.5rem;
     font-size: 1rem;
     line-height: 1;
-    color: #ffffff;
+    color: $text-color;
+  }
+  &__rating {
+    grid-area: rating;
+    justify-self: end;
+    width: 100%;
+    height: 2.5rem;
+    font-size: 1rem;
+    line-height: 1;
+    font-weight: bold;
+    color: $text-color;
+    position: relative;
+    &::before{
+      content: "★";
+      color: rgb(255, 230, 3);
+    }
+  }
 
-    &:before {
+  // &__info {
+  //   position: absolute;
+  //   top: 2.5rem;
+  //   left: 0;
+  //   padding: 0.25rem;
+  //   font-size: 0.75rem;
+  //   line-height: 1.3;
+  //   font-weight: normal;
+  //   color: $text-color;
+  // }
+
+  &__price {
+    grid-area: price;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1;
+    color: $text-color;
+    align-items: center;
+    > *:before {
       content: "$";
+    }
+    >:last-child{
+      margin-left: .9375rem;
+      text-decoration: line-through;
+      opacity: 0.7;
     }
   }
 
   &__button-add,
   &__button-info {
-    position: absolute;
-    bottom: 0.625rem;
-    padding: 0.25rem;
-    border: 0;
     background-color: rgba(0, 0, 0, 0.7);
     font-size: 0.875rem;
     line-height: 1;
@@ -82,11 +82,11 @@
   }
 
   &__button-add {
-    right: 4.5rem;
+    grid-area: add;
   }
 
   &__button-info {
-    right: 0.625rem;
+    grid-area: info;
   }
 }
 
