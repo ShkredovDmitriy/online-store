@@ -30,8 +30,8 @@ $light-color: #ffffff;
 
 .active-btn{
   &:active {
-    box-shadow: 0 .125rem #666;
-    border: .0625rem solid #666;
+    box-shadow: 0 .125rem rgba($text-color, 0.4);
+    border: .0625rem solid rgba($text-color, 0.4);
   }
 }
 
