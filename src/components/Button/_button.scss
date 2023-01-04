@@ -1,12 +1,14 @@
 .primary-btn{
-    margin: 15px .625rem;
-    padding: 15px 50px;
-    width: 220px;
-    border: 1px solid $text-color;
-    border-radius: 128px;
+    margin: .9375rem .625rem;
+    padding: .9375rem 3.125rem;
+    width: 18.75rem;
+    border: none;
+    border-radius: 8rem;
     text-align: center;
     cursor: pointer;
-    font-size: 17.5008px;
+    font-size: 1.4vw;
     font-weight: 600;
     line-height: 1.5625rem;
+    @extend .hover-btn;
+    @extend .active-btn;
 }
