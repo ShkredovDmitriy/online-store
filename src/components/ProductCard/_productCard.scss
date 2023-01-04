@@ -94,9 +94,11 @@
 
   &__button-info {
     grid-area: info;
+    flex-wrap: wrap;
     justify-self: end;
-    text-align: center;
-    padding-top: .4375rem;
+    display: flex;
+    justify-content: center;
+    align-content: center;
   }
 }
 
