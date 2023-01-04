@@ -5,7 +5,7 @@ import { store } from "store";
 import "./index.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
-import { Header, Footer } from "components";
+import { Header, Footer, ModalPurchase, ModalInform } from "components";
 import { PageCatalog, PageProduct, Page404 } from "pages";
 
 const root = ReactDOM.createRoot(
@@ -22,6 +22,8 @@ root.render(
           <Route path="/*" element={<Page404 />} />
         </Routes>
         <Footer />
+        <ModalPurchase />
+        <ModalInform />
       </Router>
     </Provider>
   </React.StrictMode>

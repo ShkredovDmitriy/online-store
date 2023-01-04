@@ -49,6 +49,16 @@ const productsSearch = createReducer("", (builder) => {
   builder.addCase(setProductsSearch, (state, action) => action.payload);
 });
 
+const showModalPurchase = createAction<boolean>("showModalPurchase");
+const modalPurchase = createReducer(true, (builder) => {
+  builder.addCase(showModalPurchase, (state, action) => action.payload);
+});
+
+const showModalInform = createAction<boolean>("showModalInform");
+const modalInform = createReducer(false, (builder) => {
+  builder.addCase(showModalInform, (state, action) => action.payload);
+});
+
 export const action = {
   setFilterCategory,
   setFilterBrand,
@@ -57,6 +67,8 @@ export const action = {
   setProductsSort,
   setProductsView,
   setProductsSearch,
+  showModalPurchase,
+  showModalInform,
 };
 
 export const store = configureStore({
@@ -68,6 +80,8 @@ export const store = configureStore({
     productsSort,
     productsView,
     productsSearch,
+    modalPurchase,
+    modalInform,
   },
   devTools: true,
 });
