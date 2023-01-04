@@ -26,6 +26,11 @@
 
       &:nth-child(3) {
         justify-content: flex-end;
+        >:not(:first-child){
+          &:checked{
+            accent-color: $highlight-color;
+          }
+        }
       }
     }
   }
