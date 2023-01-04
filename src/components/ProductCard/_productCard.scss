@@ -56,7 +56,8 @@
     grid-area: price;
     display: flex;
     flex-direction: row;
-    margin-top: .625rem;
+    margin-top: 2rem;
+    margin-bottom: .3125rem;
     width: 100%;
     font-size: 1rem;
     line-height: 1;
@@ -76,12 +77,15 @@
   &__button-info {
     background-color: rgb(0, 0, 0);
     border-radius: 6.5rem;
+    border: none;
     width: 6rem;
     font-size: 0.875rem;
     line-height: 1;
     color: white;
     text-decoration: none;
     cursor: pointer;
+    @extend .hover-btn;
+    @extend .active-btn;
   }
 
   &__button-add {
@@ -92,7 +96,7 @@
     grid-area: info;
     justify-self: end;
     text-align: center;
-    padding-top: 13%;
+    padding-top: .4375rem;
   }
 }
 
