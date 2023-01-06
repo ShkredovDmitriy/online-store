@@ -6,7 +6,7 @@ import "./index.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import { Header, Footer, ModalPurchase, ModalInform } from "components";
-import { PageCatalog, PageProduct, Page404 } from "pages";
+import { PageCatalog, PageProduct, Page404, PageCart } from "pages";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -20,6 +20,7 @@ root.render(
           <Route path="/" element={<PageCatalog />} />
           <Route path="/product/:id" element={<PageProduct />} />
           <Route path="/*" element={<Page404 />} />
+          <Route path="/cart" element={<PageCart />} />
         </Routes>
         <Footer />
         <ModalPurchase />

@@ -1,0 +1,9 @@
+.page-cart {
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: start ;
+    align-content: space-between;
+    @extend .text;
+  }
