@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "../../components/Style/main.scss";
 import { useParams } from "react-router-dom";
-import { TProductItem } from "types";
+import { CartItem, TProductItem } from "types";
 import { productsList } from "data";
 import { ImageSlider } from '../../components/ImageSlider/imageSlider'
 import { Rating } from '../../components/Rating/rating'
 import { Button } from '../../components/Button/button'
-
+import { action, useSelector, RootState } from "store";
+import { useDispatch } from "react-redux";
 
 export const PageProduct = () => {
   const { id } = useParams();
@@ -18,6 +19,18 @@ export const PageProduct = () => {
   const [mainImageUrl, setMainImageUrl] = useState<string>(product.images[0]);
   const [details, setDetails] = useState(false)
 
+  const cartItems: CartItem[] = useSelector((state: RootState) => state.cartItems);
+  const dispatch = useDispatch();
+
+  const isProductInCart = cartItems.find(x => x.id == product.id) !== undefined;
+
+  const addOrRemoveFromCart = () =>{
+    if (isProductInCart) {
+      dispatch(action.setCartItems([...cartItems].filter(x => x.id != product.id)));
+      return;
+    }
+    dispatch(action.setCartItems([...cartItems, { ...product, count: 1 }]));
+  }
 
   return <main className="page-product">
      <div className="product__path">
@@ -53,7 +66,9 @@ export const PageProduct = () => {
           </div>
           <div className="product__info-stock">Stock: {product.stock}</div>
           <div className="product__info-btn">
-            <Button type="primary-btn" backColor="#B4E907" onClick={() => console.log('1')} >Add to card</Button>
+            <Button type="primary-btn" backColor="#B4E907" onClick={() => addOrRemoveFromCart()}>
+              {isProductInCart ? 'Drop from cart' : 'Add to cart'}
+            </Button>
             <Button type="primary-btn" backColor="#000000" textColor="#ffffff" onClick={() => console.log('1')} >Buy now</Button>
           </div>
         </div>

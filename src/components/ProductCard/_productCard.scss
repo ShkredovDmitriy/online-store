@@ -1,6 +1,6 @@
 .product-card {
   display: grid;
-  grid-template-areas: "img img img img img" "img img img img img" "title title title . rating" "price price price price price" "add add . info info";
+  grid-template-areas: "img img img img img" "img img img img img" "title title title . rating" "price price price price price" "btn btn btn btn btn";
   width: 13.75rem;
   height: 20.625rem;
   background: #FFFFFF;
@@ -73,35 +73,36 @@
     }
   }
 
-  &__button-add,
-  &__button-info {
-    background-color: rgb(0, 0, 0);
-    border-radius: 6.5rem;
-    border: none;
-    width: 6rem;
-    font-size: 0.875rem;
-    line-height: 1;
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    @extend .hover-btn;
-    @extend .active-btn;
-  }
-
-  &__button-add {
-    grid-area: add;
-  }
-
-  &__button-info {
-    grid-area: info;
-    flex-wrap: wrap;
-    justify-self: end;
+  &__button {
+    grid-area: btn;
     display: flex;
-    justify-content: center;
-    align-content: center;
+    flex-direction: row;
+    justify-content: space-between;
+    &-add,
+    &-info {
+      background-color: $text-color;
+      border-radius: 6.5rem;
+      border: none;
+      padding: 0 .625rem;
+      font-size: 0.875rem;
+      color: $light-color;
+      text-decoration: none;
+      cursor: pointer;
+      @extend .hover-btn;
+      @extend .active-btn;
+    }
+
+    &-info {
+      flex-wrap: wrap;
+      justify-self: end;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+    }
   }
 }
 
 .small .product-card {
   height: 12rem;
+  
 }

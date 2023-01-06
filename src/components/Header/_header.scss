@@ -7,19 +7,54 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-
-  
+  align-items: end;
+  @extend .text;
+  img{
+    height: calc(30px + 0.5vw);
+    width: calc(30px + 0.5vw);
+    background-color: $highlight-color;
+  }
 
   &__logo{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: end;
     >*{
       margin-right: .625rem;
     }
   }
+
   &__title{
     @extend .title;
+  }
+
+  &__price{
+    display: flex;
+    >*{
+      margin-left: .9375rem;
+    }
+    > *:before {
+      content: "$";
+    }
+    &-total{
+      text-decoration: line-through;
+      opacity: 0.7;
+    }
+  }
+
+  &__cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-color;
+    cursor: pointer;
+    &-count{
+      position: absolute;
+      margin-top: 12px;
+      z-index: 1;
+    }
+    >:last-child{
+      position: relative;
+    }
   }
 }
