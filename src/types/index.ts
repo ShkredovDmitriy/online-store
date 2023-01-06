@@ -18,3 +18,14 @@ export type TFilter = {
   priceMin: number;
   priceMax: number;
 };
+
+export type CartItem = {
+  id: number,
+  count: number,
+  title: string,
+  description: string,
+  price: number,
+  discountPercentage: number,
+  rating: number,
+  thumbnail: string,
+};
