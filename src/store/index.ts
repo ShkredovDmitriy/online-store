@@ -1,6 +1,8 @@
 import { ActionReducerMapBuilder, configureStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
 import { createAction, createReducer } from "@reduxjs/toolkit";
+import { CartItem } from "../types/index";
+
 
 const setFilterCategory = createAction<string[]>("setFilterCategory");
 const filterCategory = createReducer(
@@ -59,6 +61,11 @@ const modalInform = createReducer(false, (builder) => {
   builder.addCase(showModalInform, (state, action) => action.payload);
 });
 
+const setCartItems = createAction<CartItem[]>("setCartItems");
+const cartItems = createReducer(new Array<CartItem>(), (builder) => {
+  builder.addCase(setCartItems, (state, action) => action.payload);
+});
+
 export const action = {
   setFilterCategory,
   setFilterBrand,
@@ -69,6 +76,7 @@ export const action = {
   setProductsSearch,
   showModalPurchase,
   showModalInform,
+  setCartItems,
 };
 
 export const store = configureStore({
@@ -82,6 +90,7 @@ export const store = configureStore({
     productsSearch,
     modalPurchase,
     modalInform,
+    cartItems,
   },
   devTools: true,
 });
@@ -89,3 +98,4 @@ export const store = configureStore({
 export { useDispatch, useSelector };
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+
