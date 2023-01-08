@@ -1,8 +1,8 @@
 import { ActionReducerMapBuilder, configureStore } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
 import { createAction, createReducer } from "@reduxjs/toolkit";
-import { CartItem } from "../types/index";
-
+import { TCartItem } from "../types/index";
+import { TPromoCode } from "../components/Promo/promoConsts";
 
 const setFilterCategory = createAction<string[]>("setFilterCategory");
 const filterCategory = createReducer(
@@ -61,9 +61,14 @@ const modalInform = createReducer(false, (builder) => {
   builder.addCase(showModalInform, (state, action) => action.payload);
 });
 
-const setCartItems = createAction<CartItem[]>("setCartItems");
-const cartItems = createReducer(new Array<CartItem>(), (builder) => {
+const setCartItems = createAction<TCartItem[]>("setCartItems");
+const cartItems = createReducer(new Array<TCartItem>(), (builder) => {
   builder.addCase(setCartItems, (state, action) => action.payload);
+});
+
+const setPromoCodes = createAction<TPromoCode[]>("setPromoCodes");
+const promoCodes = createReducer(new Array<TPromoCode>(), (builder) => {
+  builder.addCase(setPromoCodes, (state, action) => action.payload);
 });
 
 export const action = {
@@ -77,6 +82,7 @@ export const action = {
   showModalPurchase,
   showModalInform,
   setCartItems,
+  setPromoCodes,
 };
 
 export const store = configureStore({
@@ -91,6 +97,7 @@ export const store = configureStore({
     modalPurchase,
     modalInform,
     cartItems,
+    promoCodes,
   },
   devTools: true,
 });

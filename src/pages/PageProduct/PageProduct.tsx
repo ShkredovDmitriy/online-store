@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../components/Style/main.scss";
 import { useParams } from "react-router-dom";
-import { CartItem, TProductItem } from "types";
+import { TCartItem, TProductItem } from "types";
 import { productsList } from "data";
 import { ImageSlider } from '../../components/ImageSlider/imageSlider'
 import { Rating } from '../../components/Rating/rating'
@@ -19,7 +19,7 @@ export const PageProduct = () => {
   const [mainImageUrl, setMainImageUrl] = useState<string>(product.images[0]);
   const [details, setDetails] = useState(false)
 
-  const cartItems: CartItem[] = useSelector((state: RootState) => state.cartItems);
+  const cartItems: TCartItem[] = useSelector((state: RootState) => state.cartItems);
   const dispatch = useDispatch();
 
   const isProductInCart = cartItems.find(x => x.id == product.id) !== undefined;

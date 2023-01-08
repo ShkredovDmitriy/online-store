@@ -3,15 +3,16 @@ import "../Style/main.scss";
 import  store from "../../assets/Img/iconstore.png";
 import  cart from "../../assets/Img/cart.png";
 import { useSelector, RootState } from "store";
-import { CartItem } from "types/index";
+import { TCartItem } from "types/index";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
-  const cartItems: CartItem[] = useSelector((state: RootState) => state.cartItems);
-  const totalPrice = cartItems.reduce((prev: number, curr: CartItem) => prev + curr.price * curr.count, 0);
-  const discountPrice = cartItems.reduce((prev: number, curr: CartItem) => 
+  
+  const cartItems: TCartItem[] = useSelector((state: RootState) => state.cartItems);
+  const totalPrice = cartItems.reduce((prev: number, curr: TCartItem) => prev + curr.price * curr.count, 0);
+  const discountPrice = cartItems.reduce((prev: number, curr: TCartItem) => 
     prev + Math.round(curr.price * (100 - curr.discountPercentage) / 100) * curr.count, 0);
-  const totalCount = cartItems.reduce((prev: number, curr: CartItem) => prev + curr.count, 0);
+  const totalCount = cartItems.reduce((prev: number, curr: TCartItem) => prev + curr.count, 0);
 
   return <header className="header">
     <div className="header__logo">

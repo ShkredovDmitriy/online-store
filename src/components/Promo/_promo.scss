@@ -1,0 +1,75 @@
+.promo{
+    input{
+        width: 100%;
+        background-color:  $highlight-color;
+        color:  $text-color;
+        outline: none;
+        text-align: center;
+        font-weight: bold;
+    }
+    &__code{
+        margin-top: 10px;
+        color: rgb(255, 230, 3);
+        font-size: 80%;
+        >* {
+            margin-top: 5px;
+            &::before{
+                content: '·';
+            }
+        }
+    }
+    &__description{
+        font-size: 80%;
+        margin: .625rem 0;
+        button{
+            margin: .625rem 0;
+            padding: .625rem 1.25rem;
+            background-color: $light-color;
+            color: $text-color !important;
+            border-radius: 6.5rem;
+            border: none;
+            color: $light-color;
+            text-decoration: none;
+            cursor: pointer;
+            @extend .hover-btn;
+            @extend .active-btn;
+        }
+    }
+    &__applied{
+        font-size: 80%;
+        margin: .625rem 0;
+        border: .0625rem solid $light-color;
+        button{
+            margin: .625rem 0;
+            padding: .625rem 1.25rem;
+            background-color: $light-color;
+            color: $text-color !important;
+            border-radius: 6.5rem;
+            border: none;
+            color: $light-color;
+            text-decoration: none;
+            cursor: pointer;
+            @extend .hover-btn;
+            @extend .active-btn;
+        }
+        p{
+            margin-top: 10px;
+        }
+        &-description{
+            position: relative;
+            &::before{
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 0px;
+                left: 0;
+                top: -0.625rem;
+                border: .0625rem solid $light-color;
+            }
+        }
+        >:first-child{
+            color: $highlight-color;
+
+        }
+    }
+}

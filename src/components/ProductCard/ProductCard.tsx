@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CartItem, TProductItem } from "types/index";
+import { TCartItem, TProductItem } from "types/index";
 import { Link } from "react-router-dom";
 import "../Style/main.scss";
 import { action, useSelector, RootState } from "store";
@@ -20,7 +20,7 @@ export const ProductCard = ({ product }: { product: TProductItem }) => {
   } = product;
 
 
-  const cartItems: CartItem[] = useSelector((state: RootState) => state.cartItems);
+  const cartItems: TCartItem[] = useSelector((state: RootState) => state.cartItems);
   const dispatch = useDispatch();
 
   const isProductInCart = cartItems.find(x => x.id == product.id) !== undefined;

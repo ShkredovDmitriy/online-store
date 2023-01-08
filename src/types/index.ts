@@ -19,7 +19,7 @@ export type TFilter = {
   priceMax: number;
 };
 
-export type CartItem = {
+export type TCartItem = {
   id: number,
   count: number,
   title: string,
@@ -28,4 +28,5 @@ export type CartItem = {
   discountPercentage: number,
   rating: number,
   thumbnail: string,
+  stock: number,
 };
