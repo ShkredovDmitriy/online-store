@@ -337,7 +337,7 @@ export const ModalPurchase = () => {
             )}
           </div>
 
-          <button className="form-purchase__confirm" type="submit">
+          <button className="primary-btn  form-purchase__confirm" type="submit">
             Confirm
           </button>
         </form>

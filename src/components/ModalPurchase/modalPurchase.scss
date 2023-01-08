@@ -33,13 +33,18 @@
     max-width: 31.25rem;
     padding: 2rem 1rem;
     background-color: #ffffff;
+    border-radius: 1rem;
   }
 
   &__title {
     margin-bottom: 2rem;
+    width: 100%;
+    padding: 0.45rem;
+    background-color: #b4e907;
     font-size: 1.875rem;
     line-height: 1;
     font-weight: normal;
+    color: #000000;
     text-align: center;
   }
 
@@ -116,6 +121,9 @@
   &__subtitle {
     margin-top: 2rem;
     margin-bottom: 2rem;
+    width: 100%;
+    padding: 0.45rem;
+    background-color: #b4e907;
     font-size: 1.5rem;
     line-height: 1;
     font-weight: normal;
@@ -124,8 +132,9 @@
 
   &__confirm {
     margin-top: 2rem;
-    width: 12.5rem;
-    height: 3.125rem;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     cursor: pointer;
+    transition: 0.3s;
   }
 }
