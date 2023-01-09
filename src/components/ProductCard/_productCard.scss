@@ -104,8 +104,8 @@
 
 .small .product-card {
   display: grid;
-  grid-template-columns: 30% 30%;
-  grid-template-rows: 1% 25% 40% 10% 23%;
+  grid-template-columns: 60% 10%;
+  grid-template-rows: 1% 28% 35% 10% 25%;
   grid-template: 1%;
   row-gap: 1%;
   height: 12rem;
@@ -118,12 +118,16 @@
   &__price{
     margin-top: .0625rem;
   }
+  &__title{
+    font-size: .875rem;
+  }
   &__button{
     width: 100%;
     height: 100%;
-    font-size: .5rem;
+  
     >:first-child {
       margin-right: .3125rem;
+      font-size: 0.75rem;
     }
   }
 }
