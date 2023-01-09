@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "https://shkredovdmitriy.github.io/online-store/",
+  "homepage": "https://shkredovdmitriy.github.io/online-store",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
