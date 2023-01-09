@@ -1,3 +1,3 @@
 # Online Store
 
-https://shkredovdmitriy.github.io/online-store/
+https://shkredovdmitriy.github.io/online-store
