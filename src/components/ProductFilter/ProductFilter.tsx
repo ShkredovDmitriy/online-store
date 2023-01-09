@@ -29,6 +29,10 @@ export const ProductFilter = () => {
     (state: RootState) => state.filterBrand
   );
 
+  const productsSearch: string = useSelector(
+    (state: RootState) => state.productsSearch
+  );
+
   const [filterPriceMin, filterPriceMax]: number[] = useSelector(
     (state: RootState) => state.filterPrice
   );
@@ -48,6 +52,23 @@ export const ProductFilter = () => {
     available = available.filter((productItem: TProductItem) =>
       filterBrand.includes(productItem.brand)
     );
+
+  if (productsSearch.length > 0)
+    available = available.filter((productItem: TProductItem) => {
+      if (productItem.category.toLowerCase().indexOf(productsSearch) > -1)
+        return true;
+      if (productItem.brand.toLowerCase().indexOf(productsSearch) > -1)
+        return true;
+      if (productItem.title.toLowerCase().indexOf(productsSearch) > -1)
+        return true;
+      if (productItem.description.toLowerCase().indexOf(productsSearch) > -1)
+        return true;
+      if (productItem.price.toString().indexOf(productsSearch) > -1)
+        return true;
+      if (productItem.stock.toString().indexOf(productsSearch) > -1)
+        return true;
+      return false;
+    });
 
   if (filterPriceMin > 0 && filterPriceMax > 0)
     available = available.filter(
