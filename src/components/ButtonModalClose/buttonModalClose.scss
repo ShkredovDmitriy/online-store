@@ -1,0 +1,26 @@
+.button-modal-close {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 1;
+
+  &:hover {
+    svg {
+      stroke: #ff0000;
+    }
+  }
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    stroke: #000000;
+    transition: stroke 0.25s;
+  }
+}

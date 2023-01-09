@@ -1,0 +1,45 @@
+$text-color: #000000;
+$highlight-color: #B4E907;
+$light-color: #ffffff;
+
+.upline {
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    left: 0;
+    top: -15px;
+    border: 0.5px solid rgba($text-color, 0.4);
+  }
+}
+
+.underline {
+  position: relative;
+  &::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    left: 0;
+    bottom: -15px;
+    border: 0.5px solid rgba($text-color, 0.4);
+  }
+}
+
+.active-btn{
+  &:active {
+    box-shadow: 0 .125rem rgba($text-color, 0.4);
+    border: .0625rem solid rgba($text-color, 0.4);
+  }
+}
+
+.hover-btn{
+  transition: color 0.3s, background-color 0.3s;
+
+  &:hover {
+    background-color: $highlight-color !important;
+    color: $text-color !important;
+  }
+}

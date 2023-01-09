@@ -1,0 +1,102 @@
+.card-item{
+    display: grid;
+    grid-template-columns: 4% 18% 58% 15%;
+    justify-content: space-between;
+    gap: 1%;
+    justify-items: end;
+    margin: .9375rem 0;
+    padding: .625rem;
+    box-shadow: 0rem .125rem 1.25rem .3125rem rgba($text-color, 0.4);
+    border-radius: 1.25rem;
+    @media (max-width: 570px) {
+        grid-template-columns: 4% 18% 45% 15%;
+
+    }
+    &__img{
+        align-self: center;
+        justify-self: center;
+        img{
+            height: 10rem;
+            object-fit: contain;
+            object-position: center;
+            border-radius: 0.3125rem;
+        }
+    }
+    &__number{
+        justify-self: start;
+        font-weight: bold;
+        margin: 0 auto;
+    }
+    &__preview{
+        width: 100%;
+        >:first-child{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            @extend .underline;
+        }
+        &-title{
+            color: $text-color !important;
+            @media (max-width: 570px) {
+                font-size: calc(10px + 0.5vw);
+            }
+        }
+        &-rating {
+            @extend .text;
+            &::before{
+            content: "★";
+            color: rgb(255, 230, 3);
+            }
+
+            @media (max-width: 570px) {
+                font-size: calc(5px + 0.5vw);
+            }
+        }
+        &-description{
+            @media (max-width: 570px) {
+                font-size: calc(5px + 0.5vw);
+            }
+        }
+        &-stock{
+            display: flex;
+            justify-content: flex-end;
+    
+            margin: .625rem 0 .625rem 0;
+            opacity: 0.8;
+            font-size: 90%;
+        }
+    }
+        
+    &__count{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: space-around;
+        width: 100%;
+        @media (max-width: 570px) {
+            font-size: calc(5px + 0.5vw);
+        }
+        &-control{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-weight: bold;
+        }
+        &-price{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 85%;
+            > *:before {
+                content: "$";
+            }
+            >:last-child{
+                text-decoration: line-through;
+                opacity: 0.7;
+                font-size: 90%;
+            }
+        }
+    }
+}
