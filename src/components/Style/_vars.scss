@@ -36,6 +36,8 @@ $light-color: #ffffff;
 }
 
 .hover-btn{
+  transition: color 0.3s, background-color 0.3s;
+
   &:hover {
     background-color: $highlight-color !important;
     color: $text-color !important;
