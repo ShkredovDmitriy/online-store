@@ -124,11 +124,11 @@ export const PageCart = () => {
             <div className="total__title">Summary</div>
             <div className="total__products">Products: {totalCount}</div>
             <div className="total__price" style={isPromoApplied ? {textDecoration: 'line-through'} : {}}>Total:
-                <p>{discountPrice}</p>
+                <p>{Math.round(discountPrice)}</p>
             </div>
             {isPromoApplied && 
                 <div className="total__price">Total:
-                    <p>{discountPriceWithPromo}</p>
+                    <p>{Math.round(discountPriceWithPromo)}</p>
                 </div>
             }
             <div className="total__promo">
