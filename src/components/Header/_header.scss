@@ -24,8 +24,14 @@
     }
   }
 
-  &__title{
+  &__title {
     @extend .title;
+    color: black;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $highlight-color;
+    }
   }
 
   &__price{

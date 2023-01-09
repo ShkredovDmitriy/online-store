@@ -15,10 +15,10 @@ export const Header = () => {
   const totalCount = cartItems.reduce((prev: number, curr: TCartItem) => prev + curr.count, 0);
 
   return <header className="header">
-    <div className="header__logo">
+    <Link className="header__logo" to={`/`}>
       <img src={store} alt="store" />
-      <div className="header__title">Online store</div>
-    </div>
+      <span className="header__title">Online store</span>
+    </Link>
     <div className="header__price">Cart total: 
       <p>{discountPrice}</p>
       { totalPrice !== 0 ? <p className="header__price-total">{totalPrice}</p> : '' }
