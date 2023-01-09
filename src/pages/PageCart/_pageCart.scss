@@ -33,6 +33,14 @@
                 font-size: calc(8px + 0.5vw);
             }
         }
+        &-page{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            >:not(:last-child){
+                margin-right: .625rem;
+            }
+        }
     }
 }
 
