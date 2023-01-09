@@ -3,7 +3,12 @@ import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import { store } from "store";
 import "./index.scss";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  HashRouter,
+} from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import { Header, Footer, ModalPurchase, ModalInform } from "components";
 import { PageCatalog, PageProduct, Page404, PageCart } from "pages";
@@ -14,7 +19,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
+      <HashRouter>
         <Header />
         <Routes>
           <Route path="/" element={<PageCatalog />} />
@@ -25,7 +30,7 @@ root.render(
         <Footer />
         <ModalPurchase />
         <ModalInform />
-      </Router>
+      </HashRouter>
     </Provider>
   </React.StrictMode>
 );
