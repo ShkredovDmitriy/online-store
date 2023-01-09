@@ -134,7 +134,7 @@ export const PageCart = () => {
             <div className="total__promo">
                 <Promo />
             </div>
-            <Button type="primary-btn" backColor="#ffffff" onClick={() => console.log('1')}>Buy now</Button>
+            <Button type="primary-btn" backColor="#ffffff" onClick={() => dispatch(action.showModalPurchase(true))}>Buy now</Button> 
         </div>
                  </div>)}
       </main>

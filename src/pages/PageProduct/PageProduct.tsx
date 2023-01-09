@@ -69,7 +69,7 @@ export const PageProduct = () => {
             <Button type="primary-btn" backColor="#B4E907" onClick={() => addOrRemoveFromCart()}>
               {isProductInCart ? 'Drop from cart' : 'Add to cart'}
             </Button>
-            <Button type="primary-btn" backColor="#000000" textColor="#ffffff" onClick={() => console.log('1')} >Buy now</Button>
+            <Button type="primary-btn" backColor="#000000" textColor="#ffffff" onClick={() => dispatch(action.showModalPurchase(true))} >Buy now</Button>
           </div>
         </div>
       </div>

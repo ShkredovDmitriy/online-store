@@ -52,7 +52,7 @@ const productsSearch = createReducer("", (builder) => {
 });
 
 const showModalPurchase = createAction<boolean>("showModalPurchase");
-const modalPurchase = createReducer(true, (builder) => {
+const modalPurchase = createReducer(false, (builder) => {
   builder.addCase(showModalPurchase, (state, action) => action.payload);
 });
 
@@ -105,4 +105,3 @@ export const store = configureStore({
 export { useDispatch, useSelector };
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
-
