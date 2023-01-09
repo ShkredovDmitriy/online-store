@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import "../../components/Style/main.scss";
 import { TCartItem} from "types";
 import { Button } from '../../components/Button/button';
@@ -74,26 +74,38 @@ export const PageCart = () => {
         }
     };
 
-    const changePageSize = (newSize: number) => {
-        const n = Math.ceil(cartItems.length / newSize);
-        if (pageNum > n) {
-            setPageNum(n)
-        }
-        setPageSize(newSize);
-    }
+    // const changePageSize = (newSize: number) => {
+    //     const n = Math.ceil(cartItems.length / newSize);
+    //     if (pageNum > n) {
+    //         setPageNum(n)
+    //     }
+    //     setPageSize(newSize);
+    // }
 
-    //console.log(Math.floor(cartItems.length / pageSize));
+    useEffect(() => {
+        const n = Math.ceil(cartItems.length / pageSize);
+        if (pageNum > n) {
+            setPageNum(n);
+        }
+    }, [pageSize])
+
+    useEffect(() => {
+        if(pageNum > cartItemsPages.length) {
+            setPageNum(pageNum - 1);
+        }
+    }, [cartItems]);
+
     return (
       <main className="page-cart">
         {!cartItems.length 
-                ? (<p> Cart is Empty </p>) 
+                ? (<p className="cart__header-title" style={{margin: '10px auto'}}> Cart is Empty </p>) 
                 : (<div className="inner">
         <div className="cart">
             <div className="cart__header">
                 <div className="cart__header-title">Products in cart</div>
                 <div className="cart__header-control">
                     Limit
-                    <input type="number" className="cart__header-control-input" min={1} max={cartItems.length} value={pageSize} onChange={event => changePageSize(Number(event.target.value))}     />
+                    <input type="number" onKeyDown={(e) => e.preventDefault()} className="cart__header-control-input" min={1} max={cartItems.length} value={pageSize} onChange={event => setPageSize(Number(event.target.value))}     />
                 </div>
                 <div className="cart__header-page">
                     <span>Page:</span>
