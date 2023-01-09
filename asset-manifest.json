@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/online-store/static/css/main.08588838.css",
+    "main.js": "/online-store/static/js/main.26e4e41a.js",
+    "static/js/787.28cb0dcd.chunk.js": "/online-store/static/js/787.28cb0dcd.chunk.js",
+    "static/media/logoMaestro.png": "/online-store/static/media/logoMaestro.71ec6c454eea71fc9251.png",
+    "static/media/logoVisa.png": "/online-store/static/media/logoVisa.bbc069236b5577004d4d.png",
+    "static/media/rs_school.svg": "/online-store/static/media/rs_school.ad178c0df28bc133be34b982d62f431d.svg",
+    "static/media/github-icon.svg": "/online-store/static/media/github-icon.7c5f8c05922fa324a5a533d0fd5a3837.svg",
+    "index.html": "/online-store/index.html",
+    "main.08588838.css.map": "/online-store/static/css/main.08588838.css.map",
+    "main.26e4e41a.js.map": "/online-store/static/js/main.26e4e41a.js.map",
+    "787.28cb0dcd.chunk.js.map": "/online-store/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.08588838.css",
+    "static/js/main.26e4e41a.js"
+  ]
+}
