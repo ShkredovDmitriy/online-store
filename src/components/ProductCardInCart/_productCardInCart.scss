@@ -84,20 +84,6 @@
             width: 100%;
             font-weight: bold;
         }
-        &-btn{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 2.5rem;
-            height: 1.5rem;
-            background: $highlight-color;
-            border-radius: 10rem;
-            border: none;
-            cursor: pointer;
-            @extend .active-btn;
-            @extend .hover-btn;
-            color: $text-color;
-        }
         &-price{
             display: flex;
             flex-direction: column;

@@ -5,6 +5,7 @@ import { productsList } from "data";
 import { useParams } from "react-router-dom";
 import { action, useSelector, RootState } from "store";
 import { Link } from "react-router-dom";
+import { Button } from '../Button/button';
 import "../../components/Style/main.scss";
 
 
@@ -38,9 +39,9 @@ export const ProductCardInCart= ({ item, order, addItem, removeItem }:
       </div>
       <div className="card-item__count">
         <div className="card-item__count-control">
-          <button className="card-item__count-btn" onClick={() => addItem(id)}>+</button>
+          <Button type="switch-btn" backColor="#B4E907" onClick={() => addItem(id)}>+</Button>
           {count}
-          <button className="card-item__count-btn" onClick={() => removeItem(id)}>-</button>
+          <Button type="switch-btn" backColor="#B4E907" onClick={() => removeItem(id)}>-</Button>
         </div>
         <div className="card-item__count-price">
           <h3>{Math.round(price * (100 - discountPercentage) / 100) * count}</h3>
