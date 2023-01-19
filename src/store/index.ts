@@ -85,6 +85,9 @@ export const action = {
   setPromoCodes,
 };
 
+const reduxStateStore = localStorage.getItem('reduxStateStore') 
+const preloadedState = reduxStateStore ? JSON.parse(reduxStateStore) : {};
+
 export const store = configureStore({
   reducer: {
     filterCategory,
@@ -100,8 +103,13 @@ export const store = configureStore({
     promoCodes,
   },
   devTools: true,
+  preloadedState
 });
 
 export { useDispatch, useSelector };
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+
+store.subscribe(() => {
+  localStorage.setItem('reduxStateStore', JSON.stringify(store.getState()))  
+});
